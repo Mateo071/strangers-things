@@ -5,7 +5,9 @@ const NavBar = () => {
   const [loggedIn, setLoggedIn] = useState('');
 
   useEffect(() => {
-    setLoggedIn('true');
+
+    setLoggedIn(false);
+    console.log(loggedIn)
   }, []);
 
   return (
