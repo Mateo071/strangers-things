@@ -26,16 +26,14 @@ const Posts = () => {
         {
           allPosts.map((post) => {
             return (
-              <>
-                <div>
-                  <h3>{post.title}</h3>
-                  <p>{post.description}</p>
-                  <p>Price: {post.price}</p>
-                  <p>Seller: {post.author.username}</p>
-                  <p>Location: {post.location}</p>
-                  <button>SEND MESSAGE</button>
+                <div key={post.id}>
+                  <h3 key={post.id + '_title'}>{post.title}</h3>
+                  <p key={post.id + '_description'}>{post.description}</p>
+                  <p key={post.id + '_price'}>Price: {post.price}</p>
+                  <p key={post.id + '_author'}>Seller: {post.author.username}</p>
+                  <p key={post.id + '_location'}>Location: {post.location}</p>
+                  <button key={post.id + '_message_button'}>SEND MESSAGE</button>
                 </div>
-              </>
             )
           })
         }

@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom'
+
 const Login = () => {
 
-  const tryLogin = () => {
+  const tryLogin = (event) => {
+    event.preventDefault();
     console.log('logging in...')
   }
 
@@ -12,6 +16,7 @@ const Login = () => {
         <label>Password: <input type="password" /></label>
         <button type="submit">LOG IN</button>
       </form>
+      <p><Link to="/signup">Don't have an account? Sign Up</Link></p>
     </>
   )
 }

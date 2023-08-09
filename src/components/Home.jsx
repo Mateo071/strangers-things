@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Profile from './Profile.jsx'
+import Login from './Login.jsx';
+import SignUp from './SignUp.jsx';
 
 const Home = () => {
+  const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState();
   const [username, setUsername] = useState("");
 
@@ -11,18 +15,15 @@ const Home = () => {
   }, []);
 
   const toProfile = () => {
-    console.log('TO PROFILE')
-    return(
-      <Profile/>
-    )
+    navigate(`/profile`)
   }
 
   const toLogIn = () => {
-    console.log('TO LOGIN')
+    navigate(`/login`)
   }
 
   const toSignUp = () => {
-    console.log('TO SIGN UP')
+    navigate(`/signup`)
   }
 
   return (
