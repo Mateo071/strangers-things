@@ -15,12 +15,6 @@ const Login = () => {
     setPassword(e.target.value);
   }
 
-  const goodLogin = () => {
-    alert('')
-    setUsername('');
-    setPassword('');
-  }
-
   const tryLogin = (event) => {
     event.preventDefault();
     const runAPI = async () => {

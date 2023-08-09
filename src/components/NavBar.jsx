@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const NavBar = () => {
-  const [loggedIn, setLoggedIn] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState('');
 
   useEffect(() => {
 
-    setLoggedIn(false);
+    setIsLoggedIn(true);
   }, []);
 
   return (
@@ -14,7 +14,7 @@ const NavBar = () => {
       <Link to="/">Stranger's Things</Link>
       <Link to="/">HOME</Link>
       <Link to="/posts">POSTS</Link>
-      {loggedIn ? 
+      {isLoggedIn ? 
       <>
         <Link to="/profile">PROFILE</Link>
         <Link onClick={() => console.log('sign out')}>LOG OUT</Link>
