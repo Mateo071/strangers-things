@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const SignUp = () => {
   const [username, setUsername] = useState('');
@@ -28,10 +28,12 @@ const SignUp = () => {
         })
       });
       const result = await response.json();
+      alert(`Success! ${result.data.message}`)
       console.log(result);
-      return result
+      return (result);
     } catch (err) {
       console.error(err);
+      alert('There was an error. Please try again.')
     }
   }
 
@@ -52,6 +54,7 @@ const SignUp = () => {
         <label>Password: <input onChange={getPassInput} type="password" /></label>
         <button type="submit">Register</button>
       </form>
+      <p><Link to='/login'>Already have an account? Log in</Link></p>
     </>
 
   )
