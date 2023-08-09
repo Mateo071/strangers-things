@@ -6,7 +6,7 @@ const Home = () => {
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    setLoggedIn(true);
+    setLoggedIn(false);
     setUsername('Mateo')
   }, []);
 
